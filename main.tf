@@ -18,13 +18,13 @@ provider "artifactory" {
 module "user-management" {
   source = "./modules/user-management"
   
-  username = "${var.username}"
-  email    = "${var.email}"
-  password = "${var.password}"
-  group_name  = "${var.group_name}"
-  repo_name = "${var.repo_name}"
-  groups   = "${var.groups}"
-  repos    = "${var.repos}"
+  username      = "${var.username}"
+  email         = "${var.email}"
+  password      = "${var.password}"
+  group_name    = "${var.group_name}"
+  repo_name     = "${var.repo_name}"
+  groups        = "${var.groups}"
+  repos         = "${var.repos}"
   user_perms    = "${var.user_perms}"
   group_perms   = "${var.group_perms}"
   

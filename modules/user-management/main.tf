@@ -8,7 +8,7 @@ terraform {
 }
 
 # Group Creation
-resource "artifactory_group" "test-group" {
+resource "artifactory_group" "group" {
   count            = var.group_name == "" ? 0 : 1
   name             = "terraform"
   description      = "test group"
