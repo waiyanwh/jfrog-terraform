@@ -5,6 +5,7 @@ provider "registry.terraform.io/jfrog/artifactory" {
   version     = "2.2.7"
   constraints = "2.2.7"
   hashes = [
+    "h1:5PkO+ZjZugO8Pqc8EX5Kpi5xmqwkuRPs2O+2w5J9LwQ=",
     "h1:9CjLxiESQDJ+nlCnHhL+iendaJdWWgQwR8hbAnaKqy8=",
     "zh:156070c09f884a84465e54ac49361d9365a5188f88b6c1fa4a4bba3ed2397a65",
     "zh:39d0d8fa88f954e8f254f7535e0d84155ac750006c83c37d058a9906a440b76e",

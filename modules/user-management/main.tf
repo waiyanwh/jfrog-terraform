@@ -10,7 +10,7 @@ terraform {
 # Group Creation
 resource "artifactory_group" "test-group" {
   count            = var.group_name == "" ? 0 : 1
-  name             = "terraform"
+  name             = var.group_name
   description      = "test group"
   admin_privileges = false
 }
