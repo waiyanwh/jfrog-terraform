@@ -6,13 +6,11 @@ variable email {}
 variable password {}
 variable group_name {}
 variable repo_name {}
+variable repo_type {}
 variable groups {
     type = list(string)
 }
 variable repos {
-    type = list(string)
-}
-variable user_perms {
     type = list(string)
 }
 variable group_perms {
