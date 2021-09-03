@@ -5,14 +5,10 @@ variable repo_type {
     description = "Package type of repo"
 }
 
-variable group_name {
-    description = "Group name which get access to repo"
+variable user_name {
+    description = "Username which get access to repo"
 }
-variable group_perms {
-    description = "Permission for group"
-    type = list(string)
-}
-variable repos {
-    description = "Repos you want to assign to user and group"
+variable user_permissions {
+    description = "Permission for user"
     type = list(string)
 }

@@ -10,22 +10,22 @@ terraform {
 
 # Repository creation
 resource "artifactory_local_repository" "local" {
-  key          = "${var.repo_name}"
-  package_type = "${var.repo_type}"
+  key          = var.repo_name
+  package_type = var.repo_type
 }
 
 resource "artifactory_permission_target" "perm" {
-  name = "perm"
+  name = "permission"
 
   repo {
     includes_pattern = ["**"]
     excludes_pattern = ["**"]
-    repositories     = var.repos
+    repositories     = [var.repo_name]
 
     actions {
-      groups {
-        name        = var.group_name
-        permissions = var.group_perms
+      users {
+        name        = var.user_name
+        permissions = var.user_permissions
       }
     }
   }

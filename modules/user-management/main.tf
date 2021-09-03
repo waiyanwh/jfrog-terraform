@@ -9,17 +9,16 @@ terraform {
 
 # Group Creation
 resource "artifactory_group" "group" {
-  count            = var.group_name == "" ? 0 : 1
-  name             = "${var.group_name}"
+  name             = var.group
   description      = "test group"
   admin_privileges = false
 }
 
 # User Creation
 resource "artifactory_user" "user" {
-  name     = var.username
+  name     = var.user_name
   email    = var.email
-  groups   = var.groups
+  groups   = [var.group]
   password = var.password
 }
 

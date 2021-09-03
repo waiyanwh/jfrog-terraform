@@ -1,4 +1,4 @@
-variable username {
+variable user_name {
     description = "The user name you want to create"
 }
 variable password {
@@ -7,10 +7,7 @@ variable password {
 variable email {
     description = "User's email address"
 }
-variable group_name {
+variable group {
     description = "Group name you want to create"
 }
-variable groups {
-    description = "Groups name for users"
-    type    = list(string)
-}
+
