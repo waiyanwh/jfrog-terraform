@@ -10,3 +10,4 @@ repo_name = "terraform-test"
 repo_type = "maven"
 repos = ["example-repo-local","maven-test-local"]
 group_perms = ["read","write","delete","manage"]
+`
