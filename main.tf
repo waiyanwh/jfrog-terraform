@@ -18,14 +18,27 @@ provider "artifactory" {
 module "user-management" {
   source = "./modules/user-management"
   
-  username = "${var.username}"
-  email    = "${var.email}"
-  password = "${var.password}"
-  group_name  = "${var.group_name}"
-  repo_name = "${var.repo_name}"
-  groups   = "${var.groups}"
-  repos    = "${var.repos}"
-  user_perms    = "${var.user_perms}"
-  group_perms   = "${var.group_perms}"
+  username      = "${var.username}"
+  email         = "${var.email}"
+  password      = "${var.password}"
+  group_name    = "${var.group_name}"
+  groups        = "${var.groups}"
   
+}
+
+# resource "time_sleep" "wait_30_seconds" {
+#   depends_on = [module.user-management]
+
+#   create_duration = "20s"
+# }
+
+module "repo-management" {
+#  depends_on = [time_sleep.wait_30_seconds]
+  source = "./modules/repo-management"
+
+  repo_name = "${var.repo_name}"
+  repo_type = "${var.repo_type}"
+  group_name = module.user-management.group-id
+  group_perms = "${var.group_perms}"
+  repos = "${var.repos}"
 }

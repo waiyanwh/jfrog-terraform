@@ -8,9 +8,9 @@ terraform {
 }
 
 # Group Creation
-resource "artifactory_group" "test-group" {
+resource "artifactory_group" "group" {
   count            = var.group_name == "" ? 0 : 1
-  name             = "terraform"
+  name             = "${var.group_name}"
   description      = "test group"
   admin_privileges = false
 }
@@ -23,29 +23,3 @@ resource "artifactory_user" "user" {
   password = var.password
 }
 
-# Repository creation
-resource "artifactory_local_repository" "my-local" {
-  key          = var.repo_name
-  package_type = "maven"
-}
-
-resource "artifactory_permission_target" "test-perm" {
-  name = "perm"
-
-  repo {
-    includes_pattern = ["**"]
-    excludes_pattern = ["**"]
-    repositories     = var.repos
-
-    actions {
-      users {
-        name        = var.username
-        permissions = var.user_perms
-      }
-    groups {
-        name        = var.group_name
-        permissions = var.group_perms
-      }
-    }
-  }
-}
